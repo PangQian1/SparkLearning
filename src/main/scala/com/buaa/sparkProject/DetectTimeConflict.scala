@@ -77,17 +77,17 @@ object DetectTimeConflict {
     //筛选不完整记录
     val filte = abline.filter{x=>
       val items = x.split(",")
-      items.length == 11
+      items.length == 6
     }
     println("记录总数" + filte.count())
 
     //将每条记录的出口收费车牌、出入站时间保留到RDD中  映射键值对（key:车牌,value:(入站时间，出站时间)）
       val mapped = filte.map{ x=>
         val items = x.split(",")
-        val plate = items(9)//车牌号
+        val plate = items(5)//车牌号
         //println(plate)
         val outDate = formateDate(items(0).substring(21,35))
-        val inDate = formateDate(items(4))
+        val inDate = formateDate(items(3))
         (plate,(inDate,outDate))
       }
 
@@ -147,17 +147,20 @@ object DetectTimeConflict {
       .setAppName("sparkProject")
       //设置程序运行的环境，通常情况下，在IDE中开发的时候，设置为local mode，至少是两个Thread
       //在实际部署的时候通过提交应用的命令去进行设置
-      .setMaster("local[1]")
+      //setMaster("local[1]")
     val sc = SparkContext.getOrCreate(sparkConf);
 
     //读取车辆的异常记录
-    val abline = sc.textFile("hdfs://bigdata01:9000/home/pq/scala/abnormalPlateRec(3万).csv");
-    //val abline = sc.textFile("I:\\programData\\scala\\abnormalPlateRec(3万).csv");
+    var abline = sc.textFile("hdfs://bigdata01:9000/home/pq/scala/abnormalPlateRec.csv");
+    //var abline = sc.textFile("I:\\programData\\scala\\abnormalPlateRec(3万).csv");
+    val header = abline.first()
+    abline = abline.filter(row => row != header)
+    //spark.read.format("csv").option("header","true").csv(path-to-file)
 
     val resRDD = detectTimeConflict(abline);
 
     //保存文件
-    resRDD.repartition(1).saveAsTextFile("hdfs://bigdata01:9000/home/pq/scala/res");
+    resRDD.repartition(1).saveAsTextFile("hdfs://bigdata01:9000/home/pq/scala/resAll");
     //resRDD.saveAsTextFile("I:\\programData\\scala\\res");
 
     println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date) + " 数据处理结束")

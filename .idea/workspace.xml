@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a00c2cff-d1b2-4c8e-b317-b35edb3b83eb" name="Default Changelist" comment="" />
+    <list default="true" id="a00c2cff-d1b2-4c8e-b317-b35edb3b83eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/buaa/sparkProject/DetectTimeConflict.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/buaa/sparkProject/DetectTimeConflict.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buaa/sparkProject/DetectTimeConflict$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buaa/sparkProject/DetectTimeConflict$$anonfun$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buaa/sparkProject/DetectTimeConflict$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buaa/sparkProject/DetectTimeConflict$$anonfun$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buaa/sparkProject/DetectTimeConflict$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buaa/sparkProject/DetectTimeConflict$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buaa/sparkProject/DetectTimeConflict.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buaa/sparkProject/DetectTimeConflict.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/sparkProject-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/sparkProject-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.buaa.sparkProject.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.buaa.sparkProject.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.buaa.sparkProject.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.buaa.sparkProject.AppTest.txt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,14 +42,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/buaa/sparkProject/DetectTimeConflict.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="161" lean-forward="true" selection-start-line="161" selection-end-line="161" />
+            <state relative-caret-position="194">
+              <caret line="153" column="89" selection-start-line="153" selection-start-column="89" selection-end-line="153" selection-end-column="89" />
               <folding>
                 <element signature="e#30#63#0" expanded="true" />
                 <element signature="e#229#731#0" />
                 <element signature="e#735#1300#0" />
-                <element signature="e#1304#1876#0" />
-                <element signature="e#1874#3952#0" />
+                <element signature="e#1298#1870#0" />
               </folding>
             </state>
           </provider>
@@ -58,6 +69,9 @@
     <findStrings>
       <find>depe</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -88,6 +102,7 @@
     <option name="width" value="1750" />
     <option name="height" value="850" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -135,6 +150,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -239,12 +255,12 @@
       <workItem from="1567670408497" duration="22850000" />
       <workItem from="1568013716234" duration="9219000" />
       <workItem from="1568034610625" duration="26854000" />
-      <workItem from="1568188117707" duration="4471000" />
+      <workItem from="1568188117707" duration="8449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63394000" />
+    <option name="totallyTimeSpent" value="67372000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -268,15 +284,15 @@
       <window_info id="Favorites" order="6" sideWeight="0.5021097" side_tool="true" weight="0.16353887" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.36209336" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.407932" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.05940594" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.39943343" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.7100424" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.22489391" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.22379604" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -319,14 +335,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/buaa/sparkProject/DetectTimeConflict.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="161" lean-forward="true" selection-start-line="161" selection-end-line="161" />
+        <state relative-caret-position="194">
+          <caret line="153" column="89" selection-start-line="153" selection-start-column="89" selection-end-line="153" selection-end-column="89" />
           <folding>
             <element signature="e#30#63#0" expanded="true" />
             <element signature="e#229#731#0" />
             <element signature="e#735#1300#0" />
-            <element signature="e#1304#1876#0" />
-            <element signature="e#1874#3952#0" />
+            <element signature="e#1298#1870#0" />
           </folding>
         </state>
       </provider>
