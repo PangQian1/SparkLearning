@@ -74,10 +74,11 @@ object DetectTimeConflict {
   def detectTimeConflict (abline: RDD[String]): RDD[String] = {
     var timeMap = Map[String, List[String]]();//以车牌为ID，以进入站时间作为value
 
-    //筛选不完整记录
+    //筛选不完整记录以及进站时间为默认情况的记录
     val filte = abline.filter{x=>
       val items = x.split(",")
-      items.length == 6
+      val inDate = formateDate(items(3)).substring(0,10)
+      items.length == 6 && isInPeriod(inDate)
     }
     println("记录总数" + filte.count())
 
@@ -109,24 +110,21 @@ object DetectTimeConflict {
         val inStation = v(i)._1;
         val outStation = v(i)._2;
 
-        val dt = inStation.substring(0,10)
-        if(isInPeriod(dt)){
-          for(j <- (i+1) to (len-1) if cir2){
-            val curT_1 = v(j)._1;
-            val curT_2 = v(j)._2;
-            if(isInTimeInterval(inStation, outStation, curT_1) || isInTimeInterval(inStation, outStation, curT_2)){
-              //说明存在冲突
-              num += 1;
-              if(num == 3) {
-                flag = true;
-                num = 0;
-                cir2 = false;
-              }
+        for(j <- (i+1) to (len-1) if cir2){
+          val curT_1 = v(j)._1;
+          val curT_2 = v(j)._2;
+          if(isInTimeInterval(inStation, outStation, curT_1) || isInTimeInterval(inStation, outStation, curT_2)){
+            //说明存在冲突
+            num += 1;
+            if(num == 3) {
+              flag = true;
+              num = 0;
+              cir2 = false;
             }
           }
-          if(flag){
-            cir1 = false;
-          }
+        }
+        if(flag){
+          cir1 = false;
         }
       }
       flag;
@@ -147,12 +145,13 @@ object DetectTimeConflict {
       .setAppName("sparkProject")
       //设置程序运行的环境，通常情况下，在IDE中开发的时候，设置为local mode，至少是两个Thread
       //在实际部署的时候通过提交应用的命令去进行设置
-      //setMaster("local[1]")
+      //.setMaster("local[1]")
     val sc = SparkContext.getOrCreate(sparkConf);
 
     //读取车辆的异常记录
     var abline = sc.textFile("hdfs://bigdata01:9000/home/pq/scala/abnormalPlateRec.csv");
     //var abline = sc.textFile("I:\\programData\\scala\\abnormalPlateRec(3万).csv");
+
     val header = abline.first()
     abline = abline.filter(row => row != header)
     //spark.read.format("csv").option("header","true").csv(path-to-file)
@@ -161,7 +160,7 @@ object DetectTimeConflict {
 
     //保存文件
     resRDD.repartition(1).saveAsTextFile("hdfs://bigdata01:9000/home/pq/scala/resAll");
-    //resRDD.saveAsTextFile("I:\\programData\\scala\\res");
+    //resRDD.repartition(1).saveAsTextFile("I:\\programData\\scala\\res");
 
     println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date) + " 数据处理结束")
   }
